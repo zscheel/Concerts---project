@@ -5,6 +5,16 @@ function onClickMenu() {
     document.getElementById("nav").classList.toggle("change");
 }
 
+//Splash Screen//
+
+const splash = document.querySelector('.splash');
+
+document.addEventListener('DOMContentLoaded', (e)=>{
+    setTimeout(()=>{
+        splash.classList.add('display-none');
+    }, 3000);
+})
+
 //Ticketmaster//
 
 const form = document.querySelector('#form');

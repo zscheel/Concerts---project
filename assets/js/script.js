@@ -5,31 +5,26 @@ function onClickMenu() {
     document.getElementById("nav").classList.toggle("change");
 }
 
-//Logs zipcode into console//
+//Ticketmaster//
 
-const form = document.getElementById("form");
+const form = document.querySelector('#form');
 
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-    const payLoad = new FormData(form);
+  const cityInput = document.querySelector('input[name="citySpace"]');
+  const city = cityInput.value;
 
-    console.log([...payLoad])
+  const url = `https://app.ticketmaster.com/discovery/v2/events.json?size=5&segmentName=music&city=${city}&apikey=YYlLAH31UiK7q5rmORIBVL1Amhm4GFR5`;
 
-})
-
-
-    $.ajax({
-        type:"GET",
-        url:"https://app.ticketmaster.com/discovery/v2/events.json?size=5&segmentName=music&apikey=YYlLAH31UiK7q5rmORIBVL1Amhm4GFR5",
-        async:true,
-        dataType: "json",
-        success: function(json) {
-                    console.log(json);
-                    // Parse the response.
-                    // Do other things.
-                 },
-        error: function(xhr, status, err) {
-                    // This time, we do not end up here!
-                 }
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const events = data._embedded.events;
+      events.forEach(event => {
+        const artistName = event.name;
+        console.log(artistName);
       });
+    });
+});
+

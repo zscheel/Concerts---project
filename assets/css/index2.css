@@ -1,8 +1,8 @@
 :root {
-    --border: #6b4e55;
-    --g1: #916a74;
-    --g2: #ac604d;
-    --g3: #9e3767;
+    --border: #af3e58;
+    --g1: #ec1248;
+    --g2: #e4441c;
+    --g3: #ee7f10;
 }
 
 @keyframes background-pan {

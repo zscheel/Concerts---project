@@ -1,3 +1,7 @@
+* {
+  background-image: url('./assets/images/bg-image.jpg');
+}
+
 :root {
     --border: #ed1541;
     --g1: rgb(255, 7, 3);

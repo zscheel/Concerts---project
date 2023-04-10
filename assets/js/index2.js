@@ -1,11 +1,3 @@
-// !hamburger Menu! //
-
-function onClickMenu() {
-    document.getElementById("menu").classList.toggle("icon");
-    document.getElementById("nav").classList.toggle("change");
-}
-
-// ! Cards Animation //
 
 const subtitles = document.getElementsByClassName("card-subtitle");
 
@@ -17,12 +9,12 @@ const createWord = (text, index) => {
   return word;
 }
 
-const addWord = (text, index, subtitle) => subtitle.appendChild(createWord(text, index));
+const addWord = (text, index, subtitle) => subtitle.appendChild(createWord(text, index, subtitle));
 
 const createSubtitle = (text, subtitle) => text.split(" ").map((word, index) => addWord(word, index, subtitle));
 
 createSubtitle("Just enter a city name below to find out what artists are playing near you.", subtitles[0]);
-createSubtitle("The greatest glory in living lies not in never falling, but in rising every time we fall.", subtitles[1]);
+createSubtitle("Here are thier albums", subtitles[1]);
 
 
 const form = document.querySelector('#form');
@@ -52,13 +44,18 @@ form.addEventListener('submit', (e) => {
         const artistName = event.name;
         const artistUrl = `https://deezerdevs-deezer.p.rapidapi.com/search?q=${artistName}`;
 
+        
+
         fetch(artistUrl, options)
           .then(response => response.json())
           .then(response => {
-            const artist = response.data[0];
-            console.log(artist);
+            const album = response.data[0].album;
+            const albumCoverUrl = album.cover;
+            const img = document.createElement("img");
+            img.src = albumCoverUrl;
+            subtitles[1].appendChild(img);
           })
           .catch(err => console.error(err));
       });
     });
-});
+});  

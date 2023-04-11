@@ -1,9 +1,9 @@
-# Project Name
+# Concerts hub
 ​
 ​
 ## Project Summary
 ​
-...
+The purpose of this project is for a user to be able to input an area where the would like to gind artists who are having concerts in that area, also preview some of the artists music for the user.
 ​
 ## Developers
 ​
@@ -22,21 +22,21 @@
 ​
 ## Animated Gifs/Pictures of App
 ​
-- Place various screens of your app here after they have been built
+![SS of web 1](/assets/images/Screenshot%202023-04-10%20at%206.57.13%20PM.png)
 ​
 ## Tech Stack
 ​
-- What languages is it written with: 
+- What languages is it written with:
+    css
+    javascript
+    jquery
 ​
 - What libraries are used: 
-​
-- Other: 
-​
+    Tailwind
 ​
 ## APIs
 ​
 - Ticketmaster 
-- Spotfy
 - Deezer
 ​
 ## MVP (Minimum Viable Product)
@@ -48,4 +48,6 @@
 ​
 ## Stretch Goals
 ​
+- Be able to bring up multiple artists in the area
+- Organize the website a little better to bring up collums of the artists and albums
 - Make it more visually and more interactive. 

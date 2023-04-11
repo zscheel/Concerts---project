@@ -49,6 +49,7 @@ form.addEventListener('submit', (e) => {
         fetch(artistUrl, options)
           .then(response => response.json())
           .then(response => {
+            localStorage.clear();
             const album = response.data[0].album;
             const albumCoverUrl = album.cover;
             const img = document.createElement("img");
